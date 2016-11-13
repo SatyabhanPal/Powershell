@@ -3,7 +3,11 @@ import json
 import requests
 awsEc2IndexUrl='https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/index.csv'
 fileName='awsIndex.csv'
+print ("Downloading the index.json file...")
 r = requests.get(awsEc2IndexUrl, stream=True)
+if(r.status_code != 200):
+	print ("Failed to get the data from AWS")
+	exit()
 with open(fileName,'wb') as fw:
 	fw.write(r.content)
 
@@ -15,7 +19,6 @@ with open (fileName) as fh:
 	for row in reader:
 		tempDict={}
 		if row['Tenancy']=='Shared' and row['Operating System']=='Linux' and row['Location']=='US West (N. California)' and row['TermType']=='OnDemand':
-			#print (row['Instance Type']+"\t|"+row['vCPU']+"\t|"+row['Physical Processor']+'\t\t|'+row['Clock Speed']+'\t|'+row['Memory']+'\t|'+row['Storage'])
 			tempDict[row['Instance Type']]={
 									'vCPU':row['vCPU'],
 									'Physical Processor':row['Physical Processor'],
@@ -26,5 +29,4 @@ with open (fileName) as fh:
 									'Network Performance':row['Network Performance']
 									}
 			instanceTypeDict.insert(0,tempDict)
-#print (instanceTypeDict)
 print (json.dumps(instanceTypeDict,indent=4, sort_keys=True))
