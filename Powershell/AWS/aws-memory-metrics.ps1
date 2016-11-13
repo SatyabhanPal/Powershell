@@ -26,13 +26,13 @@ if ((Get-Module -ListAvailable -Name AWSPowerShell) -eq $null){
 	write-host "Imported module AWSPowerShell successful"
 }
 if(($access_key -eq $null) -or ($secret_key -eq $null)){
-	write-error "Please provide the value of AccessId and AccessKey"
+	write-error "Please provide the value of AccessKey and SecretKey"
 	exit
 }
 #checking if any option is provided by user
 if ( !$memory_utilization -and !$memory_used -and !$memory_available)
 {
-	write-error "Please specify the memroy option to be publish"
+	write-error "Please specify the memroy option to be published"
 }
 $instanceid=(Invoke-WebRequest -Uri "http://169.254.169.254/latest/meta-data/instance-id").content
 if(instanceid -eq $null){
