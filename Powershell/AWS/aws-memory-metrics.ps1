@@ -35,21 +35,21 @@ if ( !$memory_utilization -and !$memory_used -and !$memory_available)
 	write-error "Please specify the memroy option to be published"
 }
 $instanceid=(Invoke-WebRequest -Uri "http://169.254.169.254/latest/meta-data/instance-id").content
-if(instanceid -eq $null){
+if($instanceid -eq $null){
 	write-error "Failed to get the instance id"
 	exit
 }
-
+while(1){
 #calculating the memory using WMI 
 [long]$mem_avil_report_from_wmi = (get-WmiObject Win32_OperatingSystem | select -expandproperty FreePhysicalMemory)/1024
 [long]$total_phy_mem_report_from_wmi = (get-WmiObject Win32_ComputerSystem |  select -expandproperty TotalPhysicalMemory)/1048576
 [long]$memory_utilization = (($total_phy_mem_report_from_wmi - $mem_avil_report_from_wmi)*100)/($total_phy_mem_report_from_wmi)
 $memoryused=$total_phy_mem_report_from_wmi - $mem_avil_report_from_wmi
-$metrics=(@{"value"=$memory_utilization;"metricname"="MemoryUtilization";"namespace"="System\Windows";"unit"="percent"},
-		@{"value"=$mem_avil_report_from_wmi;"metricname"="MemoryAvailable";"namespace"="System\Windows";"unit"="Megabytes"},
-		@{"value"=$memoryused;"metricname"="MemoryUsed";"namespace"="System\Windows";"unit"="Megabytes"}
+$metrics=(@{"value"=$memory_utilization;"metricname"="MemoryUtilization";"namespace"="Windows";"unit"="percent"},
+		@{"value"=$mem_avil_report_from_wmi;"metricname"="MemoryAvailable";"namespace"="Windows";"unit"="Megabytes"},
+		@{"value"=$memoryused;"metricname"="MemoryUsed";"namespace"="Windows";"unit"="Megabytes"}
 		)
-
+write-host "Press Ctrl+c to stop script"
 foreach($metric in $metrics){
 	write-host "==========================="
 	write-host "Putting the metrics for"
@@ -69,7 +69,10 @@ foreach($metric in $metrics){
     $metricdatum.Dimensions=$dimension
     Write-CWMetricData -Namespace $metric.namespace -MetricData $metricdatum -SecretKey $secret_key -AccessKey $access_key
 }
+sleep 30
+clear
 
+}
 
 
 
