@@ -1,5 +1,5 @@
 # Python
-This script publish the AWS instance metrics
+This script publish the AWS instance memory metrics
 
 #Required
 Interet connection
