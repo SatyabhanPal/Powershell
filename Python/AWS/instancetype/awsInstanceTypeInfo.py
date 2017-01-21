@@ -3,7 +3,11 @@ import json
 import requests
 awsEc2IndexUrl='https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/index.csv'
 fileName='awsIndex.csv'
+print ("Downloading the index.json file...")
 r = requests.get(awsEc2IndexUrl, stream=True)
+if(r.status_code != 200):
+	print ("Failed to get the data from AWS")
+	exit()
 with open(fileName,'wb') as fw:
 	fw.write(r.content)
 
