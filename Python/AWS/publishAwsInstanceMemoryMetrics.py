@@ -11,14 +11,10 @@ client = boto3.client(
     aws_secret_access_key='',
     region_name='us-west-2'
 )
-#print(client.list_metrics())
 d=datetime.datetime.now()
-print(d)
 res=requests.get("http://169.254.169.254/latest/meta-data/instance-id")
 instanceid=res.content
-print(instanceid)
 def publishMetrics(namespace,metricname,instanceid,value,unit):
-        print(instanceid)
         response=client.put_metric_data(
                 Namespace=namespace,
                 MetricData=[
@@ -39,9 +35,7 @@ def publishMetrics(namespace,metricname,instanceid,value,unit):
 while(1):
         print("Publishing metrics")
         usedmemory=psutil.virtual_memory().used/(1024*1024)
-        print(usedmemory)
         totalmemory=psutil.virtual_memory().total/(1024*1024)
-        print(totalmemory)
         utilization=float(usedmemory)/float(totalmemory)*100
         avilable=totalmemory-usedmemory
         print("Utilization value is :%s" %(utilization))
