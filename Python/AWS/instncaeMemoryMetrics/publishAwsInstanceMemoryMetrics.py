@@ -11,6 +11,7 @@ client = boto3.client(
     aws_secret_access_key='',
     region_name='us-east-1'
 )
+
 d=datetime.datetime.now()
 res=requests.get("http://169.254.169.254/latest/meta-data/instance-id")
 instanceid=res.content
