@@ -9,7 +9,7 @@ client = boto3.client(
     # Hard coded strings as credentials, not recommended.
     aws_access_key_id='',
     aws_secret_access_key='',
-    region_name='us-west-2'
+    region_name='us-east-1'
 )
 d=datetime.datetime.now()
 res=requests.get("http://169.254.169.254/latest/meta-data/instance-id")
