@@ -1,0 +1,79 @@
+{
+    "DBInstances": [
+        {
+            "PubliclyAccessible": true,
+            "MasterUsername": "root",
+            "MonitoringInterval": 0,
+            "LicenseModel": "general-public-license",
+            "VpcSecurityGroups": [
+                {
+                    "Status": "active",
+                    "VpcSecurityGroupId": "sg-e1bd1e88"
+                }
+            ],
+            "InstanceCreateTime": "2017-05-15T14:20:49.294Z",
+            "CopyTagsToSnapshot": false,
+            "OptionGroupMemberships": [
+                {
+                    "Status": "in-sync",
+                    "OptionGroupName": "default:mysql-5-6"
+                }
+            ],
+            "PendingModifiedValues": {},
+            "Engine": "mysql",
+            "MultiAZ": false,
+            "DBSecurityGroups": [],
+            "DBParameterGroups": [
+                {
+                    "DBParameterGroupName": "default.mysql5.6",
+                    "ParameterApplyStatus": "in-sync"
+                }
+            ],
+            "AutoMinorVersionUpgrade": true,
+            "PreferredBackupWindow": "22:50-23:20",
+            "DBSubnetGroup": {
+                "Subnets": [
+                    {
+                        "SubnetStatus": "Active",
+                        "SubnetIdentifier": "subnet-e43bef8d",
+                        "SubnetAvailabilityZone": {
+                            "Name": "ap-south-1a"
+                        }
+                    },
+                    {
+                        "SubnetStatus": "Active",
+                        "SubnetIdentifier": "subnet-b1dbcffb",
+                        "SubnetAvailabilityZone": {
+                            "Name": "ap-south-1b"
+                        }
+                    }
+                ],
+                "DBSubnetGroupName": "default",
+                "VpcId": "vpc-4dbf7424",
+                "DBSubnetGroupDescription": "default",
+                "SubnetGroupStatus": "Complete"
+            },
+            "ReadReplicaDBInstanceIdentifiers": [],
+            "AllocatedStorage": 5,
+            "DBInstanceArn": "arn:aws:rds:ap-south-1:507780530129:db:test-db",
+            "BackupRetentionPeriod": 7,
+            "PreferredMaintenanceWindow": "sat:12:12-sat:12:42",
+            "Endpoint": {
+                "HostedZoneId": "Z2VFMSZA74J7XZ",
+                "Port": 3306,
+                "Address": "test-db.cwnwn3hbtgrg.ap-south-1.rds.amazonaws.com"
+            },
+            "DBInstanceStatus": "backing-up",
+            "EngineVersion": "5.6.27",
+            "AvailabilityZone": "ap-south-1a",
+            "DomainMemberships": [],
+            "StorageType": "gp2",
+            "DbiResourceId": "db-H2ZEEMEU575DHQZEDVVNRVFC3Y",
+            "CACertificateIdentifier": "rds-ca-2015",
+            "StorageEncrypted": false,
+            "DBInstanceClass": "db.t2.micro",
+            "DbInstancePort": 0,
+            "DBInstanceIdentifier": "test-db"
+        }
+    ]
+}
