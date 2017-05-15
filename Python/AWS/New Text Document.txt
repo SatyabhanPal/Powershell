@@ -77,3 +77,5 @@
         }
     ]
 }
+
+aws cloudwatch get-metric-statistics --metric-name CPUUtilization --start-time 2017-05-15T00:18:00 --end-time 2017-05-15T23:18:00 --period 60 --namespace AWS/RDS --statistics Average --dimensions Name=DBInstanceIdentifier,Value=test-db
