@@ -1,0 +1,4 @@
+https://management.azure.com/subscriptions/d08678a7-bffb-4033-8326-cc6f116e297d/resourceGroups/classictestsonu/providers/Microsoft.ClassicCompute/virtualMachines/ubuntu-server/metrics?api-version=2014-04-01&$filter=(name.value eq 'Percentage CPU') and timeGrain eq duration'PT5M' and startTime eq 2017-07-16T03:54:45.7007830Z and endTime eq 2017-07-16T04:54:45.7007830Z
+
+
+https://management.azure.com/subscriptions/d08678a7-bffb-4033-8326-cc6f116e297d/resourceGroups/classictestsonu/providers/Microsoft.ClassicCompute/virtualMachines/ubuntu-server/metrics?api-version=2014-04-01&$filter=(name.value eq 'Percentage CPU') and timeGrain eq duration'PT5M' and startTime eq 2017-07-13T00:00:00.7007830Z and endTime eq 2017-07-15T23:54:45.7007830Z
