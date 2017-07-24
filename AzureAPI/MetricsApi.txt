@@ -11,6 +11,10 @@ https://management.azure.com/subscriptions/d08678a7-bffb-4033-8326-cc6f116e297d/
 https://management.azure.com/subscriptions/d08678a7-bffb-4033-8326-cc6f116e297d/resourceGroups/TESTRESOURCE/providers/Microsoft.Compute/virtualMachines/dittu-test/providers/microsoft.insights/metrics?api-version=2016-06-01&$filter=(name.value eq 'Percentage CPU') and timeGrain eq duration'PT5M' and startTime eq 2017-07-16T03:54:45 and endTime eq 2017-07-16T04:54:45
 
 
+
+https://testresource3714.table.core.windows.net/WADMetricsPT1HP10DV2S20170719?sv=2015-04-05&tn=WADMetricsPT1HP10DV2S20170719&spk=%3A002Fsubscriptions%3A002Fd08678a7%3A002Dbffb%3A002D4033%3A002D8326%3A002Dcc6f116e297d%3A002FresourceGroups%3A002FTESTRESOURCE%3A002Fproviders%3A002FMicrosoft%3A002EClassicCompute%3A002FvirtualMachines%3A002Fclassic%3A002Dwindows&epk=%3A002Fsubscriptions%3A002Fd08678a7%3A002Dbffb%3A002D4033%3A002D8326%3A002Dcc6f116e297d%3A002FresourceGroups%3A002FTESTRESOURCE%3A002Fproviders%3A002FMicrosoft%3A002EClassicCompute%3A002FvirtualMachines%3A002Fclassic%3A002Dwindows&sig=800zoD2EdWKSRUo0qL61hs30ezugYbpXCxQG3IqyMhE%3D&se=2017-07-24T23%3A47%3A37Z&sp=r&api-version=2015-04-05&$filter=CounterName eq '\Memory\Available Bytes'
+
+
 Classic Linux
 "value": "\\Memory\\AvailableMemory",
 "value": "\\Memory\\PercentAvailableMemory",
