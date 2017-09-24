@@ -24,9 +24,9 @@ class createOption():
             return obj.createTestTag(testSuiteDict)
         def fileSave():
             f = tkFileDialog.asksaveasfile(mode='w', defaultextension="xml")
-            if f is None: # asksaveasfile return `None` if dialog closed with "cancel".
+            if f is None:
                return
-            text2save = str(chkboxChecked()) # starts from `1.0`, not `0.0`
+            text2save = str(chkboxChecked())
             f.write(text2save)
             f.close()
         root = Tk()
