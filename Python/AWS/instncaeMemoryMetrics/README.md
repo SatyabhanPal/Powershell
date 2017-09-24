@@ -4,7 +4,7 @@ This script publish the AWS instance memory metrics
 #Required
 Python 3.5  
 Python module - 
-	requests - pip install reqetsts  
+	requests - pip install requests 
 	psutil - pip install psutil  
 	boto3 - pip install boto3  
 
