@@ -3,7 +3,7 @@ from Tkinter import *
 import os
 import sys
 from collections import defaultdict
-import checkbox
+import createOption
 import re
 class SelectTestSuiteTk(object):
     rootdir="/home/"
@@ -80,7 +80,7 @@ class SelectTestSuiteTk(object):
                                 self.testsuitedict[dictKey].append(mo.group(1))
             print self.testsuitedict
             self.root.destroy()
-            checkbox.createOption().createTestcaseList(self.testsuitedict)
+            createOption.createOption().createTestcaseList(self.testsuitedict)
 
 
 if __name__ == "__main__":
