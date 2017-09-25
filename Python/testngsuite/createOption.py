@@ -56,6 +56,6 @@ class createOption():
         saveXml.grid(row=count+3, column=5)
         runTestSuite = Button(root,width=20, text="Run TestSuite",command=chkboxChecked)
         runTestSuite.grid(row=count+3, column=10)
-        exit = Button(root,width=20, text="Exit",command=exitFromApp)
-        exit.grid(row=count+3,column=20)
+        exitButton = Button(root,width=20, text="Exit",command=exitFromApp)
+        exitButton.grid(row=count+3,column=20)
         root.mainloop()
