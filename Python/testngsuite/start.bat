@@ -1,1 +1,1 @@
-python SelectTestSuiteTk.py
+START /MIN python SelectTestSuiteTk.py
